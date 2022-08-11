@@ -1,15 +1,15 @@
 # Notas de SQL
 
-Estas notas son aplicadas para SQLite, tambien pueden aplicar a otros motores, pero tienen variaciones.
+Estas notas son aplicadas para SQLite, también pueden aplicar a otros motores, pero tienen variaciones.
 
 > Nota: Todo query termina con punto y coma (;).
-> Nota: Todo texto debe ir entre doble comilla (") o comilla simple (').
+> Nota: Todo texto debe ir entre doble comillas (") o comillas simple (').
 
 ## `SELECT` y `FROM`
 
 Para obtener los datos de una tabla se usa la palabra `select` junto con nombre o nombres de las columnas, con la palabra  `from` indicando el nombre de la tabla.
 
-Para obtener los todos los datos se usar el comodin (`*`).
+Para obtener los todos los datos se usar el comodín (`*`).
 
 ```sql
 SELECT * FROM name_table;
@@ -43,7 +43,7 @@ SELECT name_columns FROM name_table LIMIT 10;
 
 Para crear tablas se debe indicar el nombre de la tabla y los atributos con los que se va a construir. 
 
-Cuando se crea una columna se debe definir el nombre de la columna y su tipo, como minimo. Se pueden agregar más opciones que debe cumplir la variable.
+Cuando se crea una columna se debe definir el nombre de la columna y su tipo, como mínimo. Se pueden agregar más opciones que debe cumplir la variable.
 
 ```sql
 CREATE TABLE name_table ( name_column_one type options, name_column_two type options,... );
@@ -67,18 +67,18 @@ Como en todo lenguaje de programacion, existen los tipos datos que se pueden alm
 
 ### Opciones en los tipos de datos
 
-|Nombre     |Abrebiacion | Desctipcion|
+|Nombre     |Abreviación | Descripción|
 |:---------:|:-----------:|------------|
-|NOT NULL   |NN          |No permite que se inserte sin contenido, o vacío, es decir, forzosamente debe contener algun valor|
-|NULL       |N           |Por defuault sera `null` o vacío el contenido|
-|PRIMARY KEY|PK          |Llave primaria, es decir, esa columna es unica en su contenido, normalmente es para el `id` del registro|
-|AUTOINCREMENT|AI|Esta columna incrementara en automatico su valor, es usada para el `id`|
-|UNIQUE     |U           |Es utilizada para indicar que en la columna solo existiran valores unicos, es decir, no se pueden existir repetidos, ejemplo un correo electronico|
+|NOT NULL   |NN          |No permite que se inserte sin contenido, o vacío, es decir, forzosamente debe contener algún valor|
+|NULL       |N           |Por default sera `null` o vacío el contenido|
+|PRIMARY KEY|PK          |Llave primaria, es decir, esa columna es única en su contenido, normalmente es para el `id` del registro|
+|AUTOINCREMENT|AI|Esta columna incrementara en automático su valor, es usada para el `id`|
+|UNIQUE     |U           |Es utilizada para indicar que en la columna solo existirán valores únicos, es decir, no se pueden existir repetidos, ejemplo un correo electrónico|
 |DEFAULT    |Default     |Con esto definimos que valor se coloca en caso que no sea especificado al insertar el registro|
 
 ## Insertando datos `INSERT`
 
-Para insertar datos debemos indicar el nombre de la columna y en el mismo orden el dato a ser insertado. Esto se hace con la instruccion `INSERT INTO`. 
+Para insertar datos debemos indicar el nombre de la columna y en el mismo orden el dato a ser insertado. Esto se hace con la instrucción `INSERT INTO`. 
 
 Cuando se tienen definido en la tabla tiene un valor por default, se puede omitir al momento de insertar, al igual que si es `AUTOINCREMENT` que normalmente son los `id`s.
 
