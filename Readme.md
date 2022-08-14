@@ -55,7 +55,7 @@ CREATE TABLE name_table ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NU
 
 ## Tipos de datos
 
-Como en todo lenguaje de programacion, existen los tipos datos que se pueden almacenar dentro de una tabla, los mas comunes son:
+Como en todo lenguaje de programación, existen los tipos datos que se pueden almacenar dentro de una tabla, los mas comunes son:
 
 |Nombre	  |	Tipo	| 
 |:---------:|---------------|
@@ -63,7 +63,7 @@ Como en todo lenguaje de programacion, existen los tipos datos que se pueden alm
 |INTERGER  |Numero entero|
 |REAL      |Numero con punto flotante |
 
-> Nota: No existe el tipo `booleano` en SQLite.
+> **Nota**: No existe el tipo `booleano` en SQLite.
 
 ### Opciones en los tipos de datos
 
@@ -86,5 +86,22 @@ Cuando se tienen definido en la tabla tiene un valor por default, se puede omiti
 INSERT INTO name_table (name_column_one, name_column_two,...) VALUE (data1, data2,...);
 ```
 
+## Creando tablas temporales
 
+Se crean tablas temporales por diferentes situaciones, están tablas no son persistentes, es decir, cuando terminas la sesión estas tablas desaparecen, los datos que se colocan aquí realmente no afectan a la tabla original.
 
+Se agrega la palabra reservada `TEMPORARY`, se le da un nombre y posteriormente damos un query para obtener las columnas y datos específicos para formar esta nueva tabla.
+
+```sql
+CREATE TEMPORARY TABLE name_table_temp AS ( SELECT * FROM name_table WHERE comparison );
+```
+
+Con este `query` creo una tabla temporal llama `zapatos_temp` y la formo con todos los zapatos que en la columna `color` sean *negro*:
+
+```sql
+CREATE TEMPORARY TABLE zapatos_temp AS ( SELECT * FROM zapatos_tabla WHERE color="negros" );
+```
+
+## Filtrado `WHERE`
+
+## Operadores matemáticos `AVG`, `COUNT`, `MAX`, `MIN`
